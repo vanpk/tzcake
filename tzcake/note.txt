@@ -1,0 +1,18 @@
+ ** Config:
+ - Change 'Path root' in FileStorageImpl class to your local address.
+ - Edit value of  spring.jpa.hibernate.ddl-auto in application.properties config file.
+ - Install plugin DCEVM and Hotswap (in plugin Marketplace)
+
+ ** References:
+- upload file:
+https://www.bezkoder.com/spring-boot-file-upload/
+- openAPI:
+https://www.baeldung.com/spring-rest-openapi-documentation
+
+# Q&A (enhance):
+- handle if multiple request log in at the same time with 1 username?
+- Whitelabel
+- Exception
+- enum
+-
+
