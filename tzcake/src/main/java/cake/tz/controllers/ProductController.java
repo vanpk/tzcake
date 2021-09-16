@@ -1,6 +1,7 @@
 package cake.tz.controllers;
 
 import cake.tz.dtos.ProductDTO;
+import cake.tz.exception.domain.ProductNotFoundException;
 import cake.tz.models.Product;
 import cake.tz.services.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,7 +26,7 @@ public class ProductController {
 
 	@PostMapping("/create")
 	@ResponseStatus(HttpStatus.OK)
-	public void create(@RequestPart ProductDTO productDTO, @RequestPart MultipartFile file) {
+	public void create(@RequestBody ProductDTO productDTO) {
 		productService.create(productDTO);
 	}
 
@@ -36,7 +37,7 @@ public class ProductController {
 	}
 
 	@GetMapping("/{id}")
-	public ProductDTO get(@PathVariable("id") long id) {
+	public ProductDTO get(@PathVariable("id") long id) throws ProductNotFoundException {
 		return productService.findById(id);
 	}
 
