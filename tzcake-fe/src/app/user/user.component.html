@@ -327,12 +327,12 @@
                     <span [hidden]="selectedUser?.notLocked">
                       <i class="fa fa-lock float-right" style="color: red;">
                       </i>
-                      Account Locked
+                      Account UnLocked
                     </span>
                     <span [hidden]="!selectedUser?.notLocked">
                       <i class="fa fa-unlock float-right" style="color: green;">
                       </i>
-                      Account Unlocked
+                      Account Locked
                     </span>
                   </li>
                 </ul>
@@ -407,7 +407,7 @@
                   <div class="form-check">
                     <label class="form-check-label">
                       <input type="checkbox" name="active" ngModel class="form-check-input" >
-                      Acitve
+                      Active
                     </label>
                   </div>
                   <div class="form-check disabled">
@@ -435,8 +435,9 @@
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title text-center">Edit {{editUser?.firstName}}
-          {{editUser?.lastName}} <small [hidden]="isAdminOrManager">
+        <h5 class="modal-title text-center">
+          Edit {{editUser?.firstName}} {{editUser?.lastName}}
+          <small [hidden]="isAdminOrManager">
             (read only)
           </small></h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -494,14 +495,14 @@
                 <label class="form-check-label">
                   <input name="active" type="checkbox" [disabled]="!isManager" [(ngModel)]="editUser.active"
                     class="form-check-input">
-                  Acitve <small [hidden]="isManager">(read only)</small>
+                  Active <small [hidden]="isManager">(read only)</small>
                 </label>
               </div>
               <div class="form-check disabled">
                 <label class="form-check-label">
                   <input name="locked" type="checkbox" [disabled]="!isManager" [(ngModel)]="editUser.notLocked"
                     class="form-check-input">
-                  Unlocked <small [hidden]="isManager">(read only)</small>
+                  UnLocked <small [hidden]="isManager">(read only)</small>
                 </label>
               </div>
             </fieldset>
@@ -522,8 +523,8 @@ role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
 <div class="modal-dialog" role="document">
   <div class="modal-content">
     <div class="modal-header">
-      <h5 class="modal-title text-center">Edit {{editUser?.firstName}}
-        {{editUser?.lastName}}</h5>
+      <h5 class="modal-title text-center">
+        Edit {{editUser?.firstName}} {{editUser?.lastName}}</h5>
       <button type="button" class="close" data-dismiss="modal" aria-label="Close">
         <span aria-hidden="true">&times;</span>
       </button>
@@ -579,7 +580,7 @@ role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
               <label class="form-check-label">
                 <input name="active" type="checkbox" [(ngModel)]="editUser.active"
                   class="form-check-input">
-                Acitve
+                Active
               </label>
             </div>
             <div class="form-check disabled">

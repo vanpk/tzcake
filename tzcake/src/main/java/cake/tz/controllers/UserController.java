@@ -71,11 +71,12 @@ public class UserController extends ExceptionHandling {
                                            @RequestParam("username") String username,
                                            @RequestParam("email") String email,
                                            @RequestParam("role") String role,
+                                           @RequestParam("isNonLocked") String isNonlocked,
                                            @RequestParam("isActive") String isActive,
-                                           @RequestParam("isNonBlocked") String isNonBlocked,
-                                           @RequestParam(value = "profileImage", required = false) MultipartFile profileImage) throws UserNotFoundException, EmailExistException, IOException, UsernameExistException, NotAnImageFileException {
+                                           @RequestParam(value = "profileImage", required = false) MultipartFile profileImage)
+            throws UserNotFoundException, EmailExistException, IOException, UsernameExistException, NotAnImageFileException {
         User newUser = userService.addNewUser(firstName, lastName, username, email, role
-                , Boolean.parseBoolean(isNonBlocked), Boolean.parseBoolean(isActive), profileImage);
+                , Boolean.parseBoolean(isNonlocked), Boolean.parseBoolean(isActive), profileImage);
         return new ResponseEntity<>(newUser, OK);
     }
 
@@ -86,11 +87,11 @@ public class UserController extends ExceptionHandling {
                                        @RequestParam("username") String username,
                                        @RequestParam("email") String email,
                                        @RequestParam("role") String role,
+                                       @RequestParam("isNonLocked") String isNonlocked,
                                        @RequestParam("isActive") String isActive,
-                                       @RequestParam("isNonBlocked") String isNonBlocked,
                                        @RequestParam(value = "profileImage", required = false) MultipartFile profileImage) throws UserNotFoundException, EmailExistException, IOException, UsernameExistException, NotAnImageFileException {
         User updateUser = userService.updateUser(currentUsername, firstName, lastName, username, email, role
-                , Boolean.parseBoolean(isNonBlocked), Boolean.parseBoolean(isActive), profileImage);
+                , Boolean.parseBoolean(isNonlocked), Boolean.parseBoolean(isActive), profileImage);
         return new ResponseEntity<>(updateUser, OK);
     }
 
@@ -120,7 +121,8 @@ public class UserController extends ExceptionHandling {
     }
 
     @PostMapping("/updateProfileImage")
-    public ResponseEntity<User> updateProfileImage(@RequestParam("username") String username, @RequestParam("profileImage") MultipartFile profileImage) throws UserNotFoundException, EmailExistException, IOException, UsernameExistException, NotAnImageFileException {
+    public ResponseEntity<User> updateProfileImage(@RequestParam("username") String username, @RequestParam("profileImage") MultipartFile profileImage)
+            throws UserNotFoundException, EmailExistException, IOException, UsernameExistException, NotAnImageFileException {
         User user = userService.updateProfileImage(username, profileImage);
         return new ResponseEntity<>(user, OK);
     }
