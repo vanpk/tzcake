@@ -51,6 +51,7 @@ export class UserService {
 
   public createUserFormData(loggedInUsername: string, user: User, profileImage: File): FormData {
     const formData = new FormData();
+    
     formData.append('currentUsername', loggedInUsername);
     formData.append('firstName', user.firstName);
     formData.append('lastName', user.lastName);
