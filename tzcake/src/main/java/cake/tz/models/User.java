@@ -36,7 +36,7 @@ public class User implements Serializable {
     private String role; // USER, HR, MANAGER, ADMIN, SUPERADMIN
     private String[] authorities;
     private boolean isActive;
-    private boolean isNotBlocked;
+    private boolean isNotLocked;
 //    @OneToMany(mappedBy = "user")
 //    private List<OrderProduct> orders;
 //    @OneToMany(mappedBy = "user")
@@ -46,7 +46,7 @@ public class User implements Serializable {
 
     public User() {}
 
-    public User(Long id, String userId, String firstName, String lastName, String username, String email, String password, String profileImageUrl, boolean isActive, boolean isNotBlocked, String address, Integer phone, String description, Date createdDate, Date updatedDate, Date lastLoginDate, Date lastingLoginDateDisplay, String role, String[] authorities/*, List<UserRole> userRoles, List<OrderProduct> orders, List<CartProduct> cartProducts*/) {
+    public User(Long id, String userId, String firstName, String lastName, String username, String email, String password, String profileImageUrl, boolean isActive, boolean isNotLocked, String address, Integer phone, String description, Date createdDate, Date updatedDate, Date lastLoginDate, Date lastingLoginDateDisplay, String role, String[] authorities/*, List<UserRole> userRoles, List<OrderProduct> orders, List<CartProduct> cartProducts*/) {
         this.id = id;
         this.userId = userId;
         this.firstName = firstName;
@@ -56,7 +56,7 @@ public class User implements Serializable {
         this.password = password;
         this.profileImageUrl = profileImageUrl;
         this.isActive = isActive;
-        this.isNotBlocked = isNotBlocked;
+        this.isNotLocked = isNotLocked;
         this.address = address;
         this.phone = phone;
         this.description = description;
