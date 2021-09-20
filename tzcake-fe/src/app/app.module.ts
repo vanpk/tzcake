@@ -16,7 +16,7 @@ import { RegisterComponent } from './register/register.component';
 import { UserComponent } from './user/user.component';
 import { ForgotpasswordComponent } from './forgotpassword/forgotpassword.component';
 import { HomeComponent } from './home/home.component';
-import { CakeComponent } from './components/cake/cake.component';
+// import { CakeComponent } from './components/cake/cake.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +26,7 @@ import { CakeComponent } from './components/cake/cake.component';
     UserComponent,
     ForgotpasswordComponent,
     HomeComponent,
-    CakeComponent
+    // CakeComponent
   ],
   imports: [
     BrowserModule,
