@@ -22,6 +22,7 @@ export class LoginComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     if (this.authenticationService.isUserLoggedIn()) {
+      // todo: change navigate to Home
       this.router.navigateByUrl('/user/management');
     } else {
       this.router.navigateByUrl('/login');
@@ -36,6 +37,7 @@ export class LoginComponent implements OnInit, OnDestroy {
           const token = response.headers.get(HeaderType.JWT_TOKEN);
           this.authenticationService.saveToken(token);
           this.authenticationService.addUserToLocalCache(response.body);
+          // todo: change navigate to Home
           this.router.navigateByUrl('/user/management');
           this.showLoading = false;
         },
@@ -46,32 +48,6 @@ export class LoginComponent implements OnInit, OnDestroy {
       )
     );
   }
-
-//   // start fortgot pw
-//   public sendForgotPassword(user: User): void {
-//     this.showLoading = true;
-//     this.subscriptions.push(
-//       this.userService.resetPassword(user.email).subscribe(
-//         (response: Observable<User> | any) => {
-//           this.showLoading = false;
-//           this.sendNotification(NotificationType.SUCCESS, `A new password was sent to ${user.email}.
-//           Please check your email for password to log in.`);
-//         },
-//         (errorResponse: HttpErrorResponse) => {
-//           this.sendNotification(NotificationType.ERROR, errorResponse.error.message);
-//           this.showLoading = false;
-//         }
-//       )
-//     );
-//   }
-//   private sendNotification(notificationType: NotificationType, message: string): void {
-//     if (message) {
-//       this.notificationService.notify(notificationType, message);
-//     } else {
-//       this.notificationService.notify(notificationType, 'An error occurred. Please try again.');
-//     }
-//   }
-// // end forgot pw
 
   private sendErrorNotification(notificationType: NotificationType, message: string): void {
     if (message) {

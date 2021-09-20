@@ -6,7 +6,6 @@ import { AuthenticationService } from '../service/authentication.service';
 import { NotificationService } from '../service/notification.service';
 import { User } from '../model/user';
 import { NotificationType } from '../enum/notification-type.enum';
-import { UserService } from '../service/user.service';
 
 @Component({
   selector: 'app-register',

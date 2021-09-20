@@ -113,6 +113,12 @@ public class UserController extends ExceptionHandling {
         return response(OK, EMAIL_SENT + email);
     }
 
+    @GetMapping("/forgotpassword/{email}")
+    public ResponseEntity<HttpResponse> forgotPassword(@PathVariable("email") String email) throws EmailNotFoundException, MessagingException {
+        userService.resetPassword(email);
+        return response(OK, EMAIL_SENT + email);
+    }
+
     @DeleteMapping("/delete/{username}")
     @PreAuthorize("hasAnyAuthority('user:delete')")
     public ResponseEntity<HttpResponse> deleteUser(@PathVariable("username") String username) throws UserNotFoundException, IOException {
