@@ -8,7 +8,7 @@ import { NewContactDialogComponent } from '../new-contact-dialog/new-contact-dia
 @Component({
   selector: 'app-toolbar',
   templateUrl: './toolbar.component.html',
-  styleUrls: ['./toolbar.component.scss']
+  styleUrls: ['./toolbar.component.css']
 })
 export class ToolbarComponent implements OnInit {
   // declare Output() as a function call
