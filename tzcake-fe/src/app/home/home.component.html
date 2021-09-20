@@ -1,0 +1,69 @@
+<header class="clearfix">
+  <div class="row limited">
+      <section class="column small-12">
+        <img src="" alt="Tz Cake">
+        <h1>Tuyet Zalo</h1>
+        <h2>(Tz Cake)</h2>
+      </section>
+  </div>
+</header>
+
+<nav class="navbar navbar-expand-sm navbar-light bg-light">
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav">
+      <li class="nav-item active">
+        <a class="nav-link" [routerLink]="['/cake']">Cakes</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" [routerLink]="['/']">Posts</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" [routerLink]="['/']">Invitation</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" [routerLink]="['/login']">Sign in</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<router-outlet></router-outlet>
+
+<footer>
+  <div class="container mt-4 pt-3">
+    <div class="row">
+      <div class="col-12 col-md-6 col-xl-3">
+        <h2>Địa chỉ</h2>
+        <ul>
+          <li>Tz Cake</li>
+          <li>Hẻm 234 Ng. Ái Quốc</li>
+          <li>VN</li>
+        </ul>
+      </div>
+        <div class="col-12 col-md-6 col-xl-3">
+          <h2>Tz Cake</h2>
+          <ul>
+            <li><a class="non-textdecoration" [routerLink]="['/admin']">Cakes</a></li>
+            <li>Đặt hàng</li> 
+            <li>Góp ý</li>
+          </ul>
+      </div>
+        <div class="col-12 col-md-6 col-xl-3">
+          <h2>Liên hệ</h2>
+          <ul>
+            <li>0585887086</li>
+            <li>Zalo</li>
+            <li>Facebook</li> 
+          </ul>
+      </div>
+        <div class="col-12 col-md-6 col-xl-3">
+          <h2>About us</h2>
+          <img src="" alt="tz cake">
+          <p>&copy; 2021 &bull; all rights reserved.</p>
+        </div>
+    </div>
+  </div>
+</footer>

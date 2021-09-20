@@ -40,7 +40,7 @@ export class UserComponent implements OnInit, OnDestroy {
   }
 
   public changeTitle(title: string): void {
-    this.titleSubject.next(title);
+    this.titleSubject.next(title); //todo: see
   }
 
   public getUsers(showNotification: boolean): void {
