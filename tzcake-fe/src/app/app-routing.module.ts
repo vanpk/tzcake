@@ -16,13 +16,12 @@ const routes: Routes = [
   { path: 'user/management', component: UserComponent, canActivate: [AuthenticationGuard] },
   { path: 'home', component: HomeComponent},
   { path: 'contactmanager', loadChildren: () => import('./components/contactmanager/contactmanager.module').then(m => m.ContactmanagerModule) },
-  { path: '', loadChildren: () => import('./components/contactmanager/contactmanager.module').then(m => m.ContactmanagerModule) },
   { path: 'cake', component: CakeComponent},
-  { path: '', redirectTo: '/home'},
+  { path: '', redirectTo: '/login'},
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes, { relativeLinkResolution: 'legacy' })],
+  imports: [RouterModule.forRoot(routes/*, { relativeLinkResolution: 'legacy' }*/)],
   exports: [RouterModule]
 })
 export class AppRoutingModule {}
